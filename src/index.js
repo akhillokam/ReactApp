@@ -1,17 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+
+//CSS
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function BookList(){
+  return ( 
+    <section className ='booklist' > 
+      <Book />
+    </section>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const author = 'Mark Manson'
+const Book = () =>{
+  const title = 'The Subtle Art of Not Giving a F*ck'
+  return (
+     <article className='book'>
+       <img src='https://images-na.ssl-images-amazon.com/images/I/51mN3bY0JjL._SX332_BO1,204,203,200_.jpg' alt='' />
+       <h1>{title}</h1>
+       <h4>{author.toUpperCase()}</h4>
+
+     </article>
+  );
+};
+
+
+
+ReactDom.render(<BookList/>, document.getElementById('root'));
